@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Controle de Itens</title>
+</head>
+<body>
+    <h2>Adicionar Item</h2>
+
+    <form method="POST">
+        <label>Número do Item:</label>
+        <input type="text" name="numero_item" required>
+
+        <label>Quantidade:</label>
+        <input type="number" name="quantidade" required>
+
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <h3>Itens Adicionados</h3>
+    <ul>
+        {% for item, qtd in itens.items() %}
+            <li>Item {{ item }} - Quantidade Total: {{ qtd }}</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="/download">
+        <button>Baixar Planilha</button>
+    </a>
+</body>
+</html>
